@@ -1,0 +1,45 @@
+#  vim:ts=2:sts=2:sw=2:et
+#
+#  Author: Nho Luong
+#  Date: Tue Feb 4 09:53:28 2020 +0000
+#
+#  vim:ts=2:sts=2:sw=2:et
+#
+#  https://github.com/nholuongut/templates
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback
+#
+
+# ============================================================================ #
+#       U b u n t u   A u t o I n s t a l l e r   /   C l o u d - I n i t
+# ============================================================================ #
+
+---
+name: Ubuntu AutoInstaller Cloud-Init
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - autoinstall-user-data
+      - .github/workflows/autoinstall-user-data.yaml  # this workflow
+
+  pull_request:
+    branches:
+      - master
+      - main
+    paths:
+      - autoinstall-user-data
+      - .github/workflows/autoinstall-user-data.yaml  # this workflow
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cloudinit:
+    name: Cloud-Init
+    uses: nholuongut/GitHub-Actions/.github/workflows/autoinstall-user-data.yaml@master

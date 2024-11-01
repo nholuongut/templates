@@ -1,0 +1,47 @@
+#
+#  Author: Nho Luong
+#  Date: Tue Feb 4 09:53:28 2020 +0000
+#
+#  vim:ts=2:sts=2:sw=2:et
+#
+#  https://github.com/nholuongut/templates
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback
+#
+
+# ============================================================================ #
+#                                G r a p h v i z
+# ============================================================================ #
+
+// comments can be in:
+//
+//  C style
+/*  C style  */
+//    or
+# shell style
+// shell style
+//
+// but syntax colors work better in C style
+//
+// nerd commenter plugin only comments in // C style and doesn't uncomment either
+
+//graph G {
+//
+//    A -- B
+//}
+
+// directed graph
+digraph {
+
+    //A -> {B,C}
+    //B -> C
+
+    // adjust the node style
+    node [ style=filled,
+           color=yellow,
+           shape=square  // default: circle
+         ]
+    edge [ style=dotted, color=red ]
+    {A,B,C} -> {D,E,F}
+
+}

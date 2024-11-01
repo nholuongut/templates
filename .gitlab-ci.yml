@@ -1,0 +1,40 @@
+#  vim:ts=2:sts=2:sw=2:et
+#
+#
+#  Author: Nho Luong
+#  Date: Tue Feb 4 09:53:28 2020 +0000
+#
+#  vim:ts=2:sts=2:sw=2:et
+#
+#  https://github.com/nholuongut/templates
+#
+#  If you're using my code you're welcome to connect with me on LinkedIn and optionally send me feedback
+#
+
+# ============================================================================ #
+#                               G i t L a b   C I
+# ============================================================================ #
+
+# https://docs.gitlab.com/ee/ci/yaml/README.html
+
+#include: '.gitlab/*.y*ml'
+
+image: ubuntu:22.04
+
+# reuable components sourced from adjacent GitLab CI shared repo
+#include:
+#  - project: 'nholuongut/gitlab-ci'
+#    ref: main
+#    file: '/docker/before_script.yml'
+#  - project: 'nholuongut/gitlab-ci'
+#    ref: main
+#    file: '/docker/build.yml'
+#
+#stages:
+#  - build
+
+job:
+  before_script:
+    - setup/ci_bootstrap.sh
+  script:
+    - make init && make ci test

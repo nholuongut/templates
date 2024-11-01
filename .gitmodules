@@ -1,0 +1,6 @@
+[submodule "templates"]
+	path = templates
+	url = https://github.com/nholuongut/templates
+[submodule "sql-scripts"]
+	path = sql-scripts
+	url = https://github.com/nholuongut/sql-scripts
